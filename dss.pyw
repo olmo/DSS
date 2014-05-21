@@ -3,6 +3,7 @@
 import wx
 import generaCPubCPriv
 import firma
+import comprobarFirma
 
 class MyFrame1 ( wx.Frame ):
 	
@@ -164,7 +165,11 @@ class MyFrame1 ( wx.Frame ):
 		firma.firmar (self.ficherofile.GetPath(),self.publicafile.GetPath(),self.privadafile.GetPath())
 	
 	def comprobarFirma( self, event ):
-		pass
+		sol = comprobarFirma.comprobarFirma(self.ficherofile1.GetPath(),self.firmafile.GetPath(),self.publicafile1.GetPath())
+		if (sol):
+			self.solfirma.ChangeValue("Firma correcta")
+		else:
+			self.solfirma.ChangeValue("Firma incorrecta")
 
 class MyApp(wx.App):
 	def OnInit(self):
