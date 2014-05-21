@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*- 
 import wx
 import generaCPubCPriv
+import firma
 
 class MyFrame1 ( wx.Frame ):
 	
@@ -160,7 +161,7 @@ class MyFrame1 ( wx.Frame ):
 		generaCPubCPriv.generarClave(self.nombretxt.GetValue(), self.dirclaves.GetPath())
 	
 	def firmar( self, event ):
-		pass
+		firma.firmar (self.ficherofile.GetPath(),self.publicafile.GetPath(),self.privadafile.GetPath())
 	
 	def comprobarFirma( self, event ):
 		pass
