@@ -1,3 +1,5 @@
+import random
+
 def potencia (a, b, p):
 
 	if not b >= 1 or not p >= 2:
@@ -15,3 +17,15 @@ def potencia (a, b, p):
 	x = (x * a) % p
 
 	return x  # Devuelvo a^b (mod p)
+
+def alpha_x_y(P,Q,c):
+	
+	#Calculo de Alpha:
+	#Basado en http://es.wikipedia.org/wiki/DSA
+	h=		random.randint(2,P-2)
+	alpha=	potencia(h,c,P)	
+	x=		random.randint(2,Q-2)
+	y=		potencia(alpha,x,P)
+	
+	
+	return alpha, y, x
