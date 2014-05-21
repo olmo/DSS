@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*- 
 import wx
+import generaCPubCPriv
 
 class MyFrame1 ( wx.Frame ):
 	
@@ -156,7 +157,7 @@ class MyFrame1 ( wx.Frame ):
 	
 	# Virtual event handlers, overide them in your derived class
 	def generar( self, event ):
-		pass
+		generaCPubCPriv.generarClave(self.nombretxt.GetValue(), self.dirclaves.GetPath())
 	
 	def firmar( self, event ):
 		pass
